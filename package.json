@@ -1,0 +1,19 @@
+{
+  "name": "appsheet-discord",
+  "version": "1.0.0",
+  "description": "Webhook server nhận dữ liệu từ AppSheet và gửi tin nhắn đến người dùng Discord qua DM",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=16.9.0"
+  },
+  "license": "MIT"
+}
