@@ -14,7 +14,7 @@ const client = new Client({
 });
 
 client.once("ready", () => {
-  console.log(🤖 Bot đã đăng nhập: ${client.user.tag});
+  console.log(`🤖 Bot đã đăng nhập: ${client.user.tag}`);
 });
 
 client.login(DISCORD_BOT_TOKEN);
@@ -30,7 +30,7 @@ app.post("/webhook", async (req, res) => {
   try {
     const user = await client.users.fetch(discord_id);
     await user.send(content);
-    console.log(✅ Đã gửi DM tới ${discord_id});
+    console.log(`✅ Đã gửi DM tới ${discord_id}`);
     res.status(200).send("Đã gửi tin nhắn thành công.");
   } catch (error) {
     console.error("❌ Lỗi khi gửi DM:", error);
@@ -45,5 +45,5 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(🚀 Server đang chạy tại cổng ${PORT});
+  console.log(`🚀 Server đang chạy tại cổng ${PORT}`);
 });
