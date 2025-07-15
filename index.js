@@ -19,7 +19,7 @@ client.once("ready", () => {
 
 client.login(DISCORD_BOT_TOKEN);
 
-// ✅ Route webhook tối giản – chỉ gửi `content` đến `discord_id`
+// ✅ Route webhook – chỉ gửi `content` đến `discord_id`
 app.post("/webhook", async (req, res) => {
   const { discord_id, content } = req.body;
 
@@ -36,6 +36,11 @@ app.post("/webhook", async (req, res) => {
     console.error("❌ Lỗi khi gửi DM:", error);
     res.status(500).send("Không thể gửi tin nhắn.");
   }
+});
+
+// ✅ Route GET để kiểm tra bot
+app.get("/", (req, res) => {
+  res.send("🤖 Bot Discord đang chạy ngon lành!");
 });
 
 const PORT = process.env.PORT || 3000;
